@@ -4,12 +4,12 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## 📌 Project Overview
+## Project Overview
 This repository contains a TensorFlow/Keras implementation of the **FT-Transformer (Feature Tokenizer + Transformer)** architecture applied to the **UNSW-NB15** dataset for network intrusion detection.
 
 The project demonstrates how to adapt "Transformer" architectures (originally designed for NLP) to tabular data by treating features as tokens. It solves the problem of detecting various network attacks (Exploits, Fuzzers, Generic) against normal traffic.
 
-## 🏗 Model Architecture
+## Model Architecture
 The model follows the standard FT-Transformer design suitable for tabular data.
 
 ### Key Components:
@@ -31,7 +31,7 @@ The model follows the standard FT-Transformer design suitable for tabular data.
     * **SMOTE:** Applied to handle class imbalance in the training set.
     * **Scaling:** Numerical features are standardized using `StandardScaler`.
 
-## 📂 Code Structure & Implementation
+## Code Structure & Implementation
 
 The core logic is implemented in `ft_transformer.py`. Below is a breakdown of the custom classes:
 
@@ -47,14 +47,14 @@ Builds the model graph using the Keras Functional API.
 * **Regularization:** Applies `L2` regularization and `Dropout` to prevent overfitting.
 * **Output:** Extracts the `[CLS]` token (index 0) and passes it through a Dense layer for Softmax classification.
 
-## 📊 Performance
+## Performance
 The model is trained over 3 independent runs to ensure stability.
 * **Optimizer:** `AdamW` (with Weight Decay).
 * **Loss Function:** Categorical Crossentropy.
 
 ![Training Metrics](./images/training_metrics.png)
 
-## 🛠 Installation & Usage
+## Installation & Usage
 
 1.  **Clone the repository:**
     ```bash
@@ -72,5 +72,5 @@ The model is trained over 3 independent runs to ensure stability.
     python ft_transformer.py
     ```
 
-## 📝 License
+## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
